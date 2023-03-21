@@ -1,0 +1,50 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 21, 2023, 8:32:24 AM
+    Author     : josemorales
+*/
+
+.ds8-related-posts .ds8related{
+  display: block;
+  padding: 0 2%;
+  text-align: center
+}
+.ds8-related-posts .slick-prev, .ds8-related-posts .slick-next {
+  z-index: 1
+}
+.ds8-related-posts .slick-prev {
+  left: 20px
+}
+.ds8-related-posts .slick-next {
+  right: 20px
+}
+#ds8-related-posts a.ds8related.post-title-related {
+  line-height: 16px;
+  font-weight: 700;
+  color: #000
+}
+
+.ds8-related-posts .slick-prev, .ds8-related-posts .slick-next {
+  width: 30px;
+  height: 30px
+}
+.ds8-related-posts .slick-prev:before, .ds8-related-posts .slick-next:before {
+  font-size: 30px
+} 
+.ds8-rp-container h3 {
+  text-align: center
+}
+.ds8-related-posts{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+}
+
+.ds8-related-posts.slick-initialized {
+    visibility: visible;
+    opacity: 1;    
+}
