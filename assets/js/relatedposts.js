@@ -30,7 +30,8 @@ jQuery( function ( $ ) {
               arrows: true,
               dots: false,
               centerPadding: '40px',
-              slidesToShow: 1
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }
         ]

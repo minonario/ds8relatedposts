@@ -159,13 +159,19 @@ class DS8RelatedPosts {
 
         public function ds8_relatedposts_javascript(){
           
-            wp_enqueue_style('ds8relatedposts-css', plugin_dir_url( __FILE__ ) . 'assets/css/relatedposts.css', array(), DS8RELATEDPOSTS_VERSION);
-            wp_enqueue_style('slick-css','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), DS8RELATEDPOSTS_VERSION);
-            wp_enqueue_style('slick-theme-css','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', array('slick-css'), DS8RELATEDPOSTS_VERSION);
-            wp_enqueue_script( 'slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), DS8RELATEDPOSTS_VERSION, true );
-            
-            wp_register_script( 'ds8-relatedposts-js', plugin_dir_url( __FILE__ ) . 'assets/js/relatedposts.js', array('slick-js'), DS8ARTICULISTAS_VERSION, true );
-            wp_enqueue_script( 'ds8-relatedposts-js' );
+            /*JLMA global $post;
+            if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'ds8relatedposts') ) {
+            }*/
+          
+            if (!is_front_page()) {
+              wp_enqueue_style('ds8relatedposts-css', plugin_dir_url( __FILE__ ) . 'assets/css/relatedposts.css', array(), DS8RELATEDPOSTS_VERSION);
+              wp_enqueue_style('slick-css','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), DS8RELATEDPOSTS_VERSION);
+              wp_enqueue_style('slick-theme-css','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', array('slick-css'), DS8RELATEDPOSTS_VERSION);
+              wp_enqueue_script( 'slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), DS8RELATEDPOSTS_VERSION, true );
+
+              wp_register_script( 'ds8-relatedposts-js', plugin_dir_url( __FILE__ ) . 'assets/js/relatedposts.js', array('slick-js'), DS8ARTICULISTAS_VERSION, true );
+              wp_enqueue_script( 'ds8-relatedposts-js' );
+            }
         }
         
         public static function plugin_deactivation( ) {
