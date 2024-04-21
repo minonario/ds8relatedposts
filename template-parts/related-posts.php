@@ -37,12 +37,12 @@
                 $args['modified_label'] = $args['modified_label'] ? $args['modified_label'] . ' ' : '';
                 $time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_attr( get_the_date( DATE_W3C, $p->ID ) ),
 			'itemprop="datePublished"',
-			esc_html( get_the_date( $args['date_format'] ) ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_date( $args['date_format'], $p->ID ) ),
+			esc_attr( get_the_modified_date( DATE_W3C , $p->ID) ),
 			'itemprop="dateModified"',
-			esc_html( $args['modified_label'] ) . esc_html( get_the_modified_date( $args['date_format'] ) )
+			esc_html( $args['modified_label'] ) . esc_html( get_the_modified_date( $args['date_format'], $p->ID ) )
 		);
                 echo sprintf(
                           '%1$s%2$s%3$s',
