@@ -7,6 +7,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Author     : josemorales
 */
 
+.ds8-rp-container {
+  margin-top: 20px
+}
 .ds8-related-posts .ds8related{
   display: block;
   padding: 0 2%;
